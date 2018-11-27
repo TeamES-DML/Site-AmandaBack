@@ -50,21 +50,21 @@ Feature: Administracao de Formularios
     Then vejo o formulario com nome de contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta" na pagina sem ver a descricao
 
   Scenario: Ver um formulario pendente completo
-    Given eu estou estou logado
+    Given eu estou estou logado como usuario admin nome "Luis Filipe", email "luisfilipe@gmail.com" e senha "12345678910"
     And estou na pagina de ver formularios
     And recebi um formulario com "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
     When eu clico no botao correspondente a ver o formulario de nome do contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
     Then vejo o formulario com nome do contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta" na pagina
 
   Scenario: Ver um formulario aceito completo
-    Given eu estou estou logado
+    Given eu estou estou logado como usuario admin nome "Luis Filipe", email "luisfilipe@gmail.com" e senha "12345678910"
     And estou na pagina de ver formularios aceitos
     And aceitei um formulario com "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
     When eu clico no botao correspondente a ver o formulario de nome do contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
     Then vejo o formulario com nome do contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta" na pagina
 
   Scenario: Ver um formulario recusado completo
-    Given eu estou estou logado
+    Given eu estou estou logado como usuario admin nome "Luis Filipe", email "luisfilipe@gmail.com" e senha "12345678910"
     And estou na pagina de ver formularios recusados
     And recusado um formulario com "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
     When eu clico no botao correspondente a ver o formulario de nome do contratante "Nome", local "Cidade-PE Brasil", data "19-11-2019" e descricao "texto explicando a proposta"
