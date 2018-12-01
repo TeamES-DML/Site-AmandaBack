@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if current_user %>
+  <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Registrar', new_user_registration_path %>
+  <%= link_to 'Logar', new_user_session_path %>
+<% end %>
