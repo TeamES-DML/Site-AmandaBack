@@ -1,0 +1,38 @@
+<h1>Formularios</h1>
+<%= link_to 'Home', root_path%>
+<% if current_user %>
+  <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+<% end %>
+<h5>Logado como: <%= current_user.email %></h5>
+<%= link_to 'Voltar', formularios_path %>
+
+<table>
+  <thead>
+  <tr>
+    <th><strong>Contratante</strong></th>
+    <th><strong>Data</strong></th>
+    <th><strong>Local</strong></th>
+    <th><strong>Status</strong></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @formularios.each do |formulario| %>
+    <% if current_user.email == formulario.email and formulario.status == "Recusado"%>
+      <tr>
+        <!--<td><%= formulario.email %></td>-->
+        <td><%= formulario.contratante %></td>
+        <!--<td><%= formulario.descricao %></td>-->
+        <td><%= formulario.data %></td>
+        <td><%= formulario.local %></td>
+        <td><%= formulario.status %></td>
+        <td><%= link_to 'Show', formulario %></td>
+        <td><%= link_to 'Edit', edit_formulario_path(formulario) %></td>
+        <td><%= link_to 'Destroy', formulario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

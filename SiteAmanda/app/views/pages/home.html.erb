@@ -1,4 +1,4 @@
-<h1>Pages#home</h1>
+<h1>Site Amanda Back</h1>
 
 <% if current_user %>
   <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
@@ -6,3 +6,5 @@
   <%= link_to 'Registrar', new_user_registration_path %>
   <%= link_to 'Logar', new_user_session_path %>
 <% end %>
+
+<%=link_to 'Contrate-nos', new_formulario_path %>
