@@ -1,6 +1,7 @@
 <h1>Pages#home</h1>
 
 <% if current_user %>
+  <%= link_to 'Topicos', controller: 'topicos' %>
   <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Registrar', new_user_registration_path %>

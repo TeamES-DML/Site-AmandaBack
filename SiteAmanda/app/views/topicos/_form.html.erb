@@ -1,0 +1,27 @@
+<%= form_with(model: topico, local: true) do |form| %>
+  <% if topico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(topico.errors.count, "error") %> prohibited this topico from being saved:</h2>
+
+      <ul>
+      <% topico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :topico_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :corpo %>
+    <%= form.text_area :corpo, id: :topico_corpo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
