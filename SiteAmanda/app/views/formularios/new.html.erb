@@ -1,0 +1,8 @@
+<h1>New Formulario</h1>
+<% if current_user.admin == false%>
+<%= render 'form', formulario: @formulario %>
+
+<%= link_to 'Ver Meus Formularios', formularios_path %>
+<% else%>
+  <%= link_to 'Ver Formularios Enviados', formularios_path %>
+<% end %>
