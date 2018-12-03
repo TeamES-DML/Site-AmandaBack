@@ -1,6 +1,7 @@
 <h1>Site Amanda Back</h1>
 
 <% if current_user %>
+  <%= link_to "Editar conta", edit_user_registration_path %>
   <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Registrar', new_user_registration_path %>
