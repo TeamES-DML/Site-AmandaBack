@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202022918) do
+ActiveRecord::Schema.define(version: 20181202003546) do
+
+  create_table "formularios", force: :cascade do |t|
+    t.string "email"
+    t.string "contratante"
+    t.text "descricao"
+    t.string "data"
+    t.string "local"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", default: "Pendente"
+  end
 
   create_table "topicos", force: :cascade do |t|
     t.string "titulo"

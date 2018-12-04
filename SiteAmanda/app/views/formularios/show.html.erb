@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @formulario.email %>
+</p>
+
+<p>
+  <strong>Contratante:</strong>
+  <%= @formulario.contratante %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @formulario.descricao %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @formulario.data %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @formulario.local %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @formulario.status %>
+</p>
+<% if current_user.admin == true%>
+<%= link_to 'Edit', edit_formulario_path(@formulario) %> |
+<% end%>
+<%= link_to 'Back', formularios_path %>

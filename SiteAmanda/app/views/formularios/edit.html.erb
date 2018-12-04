@@ -1,0 +1,28 @@
+<h1>Editing Formulario</h1>
+
+<%= form_with(model: @formulario, local: true) do |form| %>
+  <% if @formulario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formulario.errors.count, "error") %> prohibited this formulario from being saved:</h2>
+
+      <ul>
+        <% formulario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :formulario_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @formulario %> |
+<%= link_to 'Back', formularios_path %>
