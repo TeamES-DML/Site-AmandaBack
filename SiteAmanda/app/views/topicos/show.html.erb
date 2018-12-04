@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @topico.titulo %>
+</p>
+
+<p>
+  <strong>Corpo:</strong>
+  <%= @topico.corpo %>
+</p>
+
+<% if current_user.admin == true%>
+	<%= link_to 'Edit', edit_topico_path(@topico) %> |
+<% end %>
+<%= link_to 'Back', topicos_path %>

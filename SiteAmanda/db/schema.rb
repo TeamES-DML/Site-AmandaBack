@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202003546) do
+ActiveRecord::Schema.define(version: 20181202022918) do
 
   create_table "formularios", force: :cascade do |t|
     t.string "email"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20181202003546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "Pendente"
+  end
+
+  create_table "topicos", force: :cascade do |t|
+    t.string "titulo"
+    t.text "corpo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Topicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Corpo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @topicos.each do |topico| %>
+      <tr>
+        <td><%= topico.titulo %></td>
+        <td><%= topico.corpo %></td>
+        <td><%= link_to 'Show', topico %></td>
+        <% if current_user.admin == true%>
+        	<td><%= link_to 'Edit', edit_topico_path(topico) %></td>
+        	<td><%= link_to 'Destroy', topico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_user.admin == true%>
+	<%= link_to 'New Topico', new_topico_path %>
+<% end %>
+<%= link_to 'Voltar', root_path %>
