@@ -17,8 +17,10 @@
         <td><%= topico.titulo %></td>
         <td><%= topico.corpo %></td>
         <td><%= link_to 'Show', topico %></td>
-        <td><%= link_to 'Edit', edit_topico_path(topico) %></td>
-        <td><%= link_to 'Destroy', topico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.admin == true%>
+        	<td><%= link_to 'Edit', edit_topico_path(topico) %></td>
+        	<td><%= link_to 'Destroy', topico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +28,7 @@
 
 <br>
 
-<%= link_to 'New Topico', new_topico_path %>
+<% if current_user.admin == true%>
+	<%= link_to 'New Topico', new_topico_path %>
+<% end %>
 <%= link_to 'Voltar', root_path %>

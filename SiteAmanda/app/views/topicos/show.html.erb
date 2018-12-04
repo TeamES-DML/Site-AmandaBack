@@ -10,5 +10,7 @@
   <%= @topico.corpo %>
 </p>
 
-<%= link_to 'Edit', edit_topico_path(@topico) %> |
+<% if current_user.admin == true%>
+	<%= link_to 'Edit', edit_topico_path(@topico) %> |
+<% end %>
 <%= link_to 'Back', topicos_path %>
