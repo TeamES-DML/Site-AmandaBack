@@ -49,7 +49,7 @@
           <td><%= formulario.local %></td>
           <td><%= formulario.status %></td>
           <td><%= link_to 'Ver', formulario %></td>
-          <td><%= link_to '', edit_formulario_path(formulario) %></td>
+          <td><%= link_to 'Responder', edit_formulario_path(formulario) %></td>
           <td><%= link_to 'Destroy', formulario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>

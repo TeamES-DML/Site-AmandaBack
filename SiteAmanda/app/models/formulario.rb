@@ -6,6 +6,7 @@ class Formulario < ApplicationRecord
   validates :local, presence: true
   validates_length_of :local, minimum: 5, maximum: 100
   validates :data, presence: true
+  validates_inclusion_of :status, :in => ["Aceito", "Recusado", "Pendente"]
 
 
 end
