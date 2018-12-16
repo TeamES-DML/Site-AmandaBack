@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @comentario.usuario %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @comentario.texto %>
+</p>
+
+<p>
+  <strong>Topico:</strong>
+  <%= @comentario.topico %>
+</p>
+<%= link_to 'Destroy', comentario, method: :destroy, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_comentario_path(@comentario) %> |
+<%= link_to 'Back', comentarios_path %>

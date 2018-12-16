@@ -1,4 +1,5 @@
 class Topico < ApplicationRecord
+  has_many :comentarios, dependent: :destroy
 	validates :titulo, presence: true
 	validates_length_of :titulo, minimum: 5, maximum: 50
 	validates :corpo, presence: true
