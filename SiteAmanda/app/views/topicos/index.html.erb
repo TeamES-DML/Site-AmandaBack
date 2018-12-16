@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user.admin == true%>
+  <%= link_to 'New Topico', new_topico_path %>
+<% end %>
+<%= link_to 'Voltar', root_path %>
 <h1>Topicos</h1>
-
+<h5>Logado como: <%= current_user.email %></h5>
 <table>
   <thead>
     <tr>
@@ -27,8 +30,3 @@
 </table>
 
 <br>
-
-<% if current_user.admin == true%>
-	<%= link_to 'New Topico', new_topico_path %>
-<% end %>
-<%= link_to 'Voltar', root_path %>

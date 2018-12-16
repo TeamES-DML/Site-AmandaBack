@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202022918) do
+ActiveRecord::Schema.define(version: 20181216184017) do
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string "usuario"
+    t.text "texto"
+    t.integer "topico_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topico_id"], name: "index_comentarios_on_topico_id"
+  end
 
   create_table "formularios", force: :cascade do |t|
     t.string "email"
