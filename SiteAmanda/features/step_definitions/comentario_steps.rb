@@ -1,4 +1,4 @@
-Given("eu estou na pagina do topico de titulo {string} e corpo {string}") do |string, string2|
+Given("eu estou na pagina do topico de titulo {string} e corpo {string}") do #|string, string2|
   pending #Falta escrever
 end
 
@@ -30,11 +30,11 @@ Then("eu vejo que nao pode ser criado um comentario sem texto") do
   expect(page).to_have_content('errors prohibited this comentario from being saved')
 end
 
-Then("eu vejo que nao pode ser criado um comentario com texto menor que {int}") do |int|
+Then("eu vejo que nao pode ser criado um comentario com texto menor que {int}") do #|int|
   expect(page).to_have_content('errors prohibited this comentario from being saved')
 end
 
-Given("eu estou na pagina de editar comentario de texto {string} e comentarista {string} do topico de titulo {string} e corpo {string}") do |string, string2, string3, string4|
+Given("eu estou na pagina de editar comentario de texto {string} e comentarista {string} do topico de titulo {string} e corpo {string}") do #|string, string2, string3, string4|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
