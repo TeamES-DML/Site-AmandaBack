@@ -29,29 +29,31 @@ class FormulariosController < ApplicationController
     @formulario = Formulario.new(formulario_params)
     @formulario.email = current_user.email
     @formulario.status = "Pendente"
-    respond_to do |format|
-      if @formulario.save
-        format.html { redirect_to @formulario, notice: 'Formulario was successfully created.' }
-        format.json { render :show, status: :created, location: @formulario }
-      else
-        format.html { render :new }
-        format.json { render json: @formulario.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @formulario.save
+    #    format.html { redirect_to @formulario, notice: 'Formulario was successfully created.' }
+    #    format.json { render :show, status: :created, location: @formulario }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @formulario.errors, status: :unprocessable_entity }
+    #  end
+    #end
+    manipulacaoControle(@formulario, @formulario.save, 'Formulario', 'created.', :created, :new)
   end
 
   # PATCH/PUT /formularios/1
   # PATCH/PUT /formularios/1.json
   def update
-    respond_to do |format|
-      if @formulario.update(formulario_params)
-        format.html { redirect_to @formulario, notice: 'Formulario was successfully updated.' }
-        format.json { render :show, status: :ok, location: @formulario }
-      else
-        format.html { render :edit }
-        format.json { render json: @formulario.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @formulario.update(formulario_params)
+    #    format.html { redirect_to @formulario, notice: 'Formulario was successfully updated.' }
+    #    format.json { render :show, status: :ok, location: @formulario }
+    #  else
+    #    format.html { render :edit }
+    #    format.json { render json: @formulario.errors, status: :unprocessable_entity }
+    #  end
+    #end
+    manipulacaoControle(@formulario, @formulario.update(formulario_params), 'Formulario', 'updated.', :ok, :edit)
   end
 
   # DELETE /formularios/1

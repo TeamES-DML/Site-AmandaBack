@@ -25,30 +25,31 @@ class TopicosController < ApplicationController
   # POST /topicos.json
   def create
     @topico = Topico.new(topico_params)
-
-    respond_to do |format|
-      if @topico.save
-        format.html { redirect_to @topico, notice: 'Topico was successfully created.' }
-        format.json { render :show, status: :created, location: @topico }
-      else
-        format.html { render :new }
-        format.json { render json: @topico.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @topico.save
+    #    format.html { redirect_to @topico, notice: 'Topico was successfully created.' }
+    #    format.json { render :show, status: :created, location: @topico }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @topico.errors, status: :unprocessable_entity }
+    #  end
+    #end
+    manipulacaoControle(@topico, @topico.save, 'Topico', 'created.', :created, :new)
   end
 
   # PATCH/PUT /topicos/1
   # PATCH/PUT /topicos/1.json
   def update
-    respond_to do |format|
-      if @topico.update(topico_params)
-        format.html { redirect_to @topico, notice: 'Topico was successfully updated.' }
-        format.json { render :show, status: :ok, location: @topico }
-      else
-        format.html { render :edit }
-        format.json { render json: @topico.errors, status: :unprocessable_entity }
-      end
-    end
+   # respond_to do |format|
+   #   if @topico.update(topico_params)
+   #     format.html { redirect_to @topico, notice: 'Topico was successfully updated.' }
+   #     format.json { render :show, status: :ok, location: @topico }
+   #   else
+   #     format.html { render :edit }
+   #     format.json { render json: @topico.errors, status: :unprocessable_entity }
+   #   end
+   # end
+    manipulacaoControle(@topico, @topico.update(topico_params), 'Topico', 'updated.', :ok, :edit)
   end
 
   # DELETE /topicos/1

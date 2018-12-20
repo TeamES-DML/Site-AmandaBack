@@ -57,12 +57,6 @@ Then("eu recebo um aviso que nome nao pode ter tamanho maior que {int}") do #|in
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("eu preencho os campos de email {string} e senha {string} e confirmacao {string}") do |email, senha, confirmacao|
-  fill_in 'user[email]', with: email
-  fill_in 'user[senha]', with: senha
-  fill_in 'user[confirmacao]', with: confirmacao
-end
-
 Then("eu recebo um aviso que email esta com a formatacao incorreta") do
   pending # Write code here that turns the phrase above into concrete actions
 end

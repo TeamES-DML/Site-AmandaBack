@@ -5,7 +5,7 @@ Feature: Administracao de Usuarios
 
   Scenario: Criar usuario com sucesso
     Given eu estou na pagina de criacao de usuario
-    When eu preencho os campos de email com "abc@def.com" e senha com "senha123" e confirmacao com "senha123"
+    When eu preencho os campos de email com "abc@def.com", senha com "senha123" e confirmacao com "senha123"
     And eu clico no botao de criar usuario
     Then eu recebo uma notificacao avisando que "Welcome! You have signed up successfully." foi criado com sucesso
 
@@ -35,19 +35,19 @@ Feature: Administracao de Usuarios
 
   Scenario: Criar usuario com email formatacao incorreta
     Given eu estou na pagina de criar usuario
-    When eu preencho os campos de email com "abc.def.com" e senha com "123456" e confirmacao "123456"
+    When eu preencho os campos de email com "abc.def.com", senha com "senha123" e confirmacao com "senha123"
     And eu clico no botao criar usuario
     Then eu recebo um aviso que email esta com a formatacao incorreta
 
   Scenario: Criar usuario com senha com tamanho maior que 50
     Given eu estou na pagina de criar usuario
-    When eu preencho os campos de email "abc@def.com" e senha "12345678910111213141516171819202122232425262728293031323334353637383940" e confirmacao "12345678910111213141516171819202122232425262728293031323334353637383940"
+    When eu preencho os campos de email com "abc.def.com", senha com "12345678910111213141516171819202122232425262728293031323334353637383940" e confirmacao com "12345678910111213141516171819202122232425262728293031323334353637383940"
     And eu clico no botao criar usuario
     Then eu recebo um aviso que senha nao pode ter tamanho maior que cinquenta
 
   Scenario: Criar usuario com nome com tamanho menor que 10
     Given eu estou na pagina de criar usuario
-    When eu preencho os campos de nome "Daniel" e email "abc@def.com" e senha "123456"
+    When eu preencho os campos de email com "abc@def.com", senha com "123456" e confirmacao com "123456"
     And eu clico no botao criar usuario
     Then eu recebo um aviso que o nome nao pode ter tamanho menor que 10
 
